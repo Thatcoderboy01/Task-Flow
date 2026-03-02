@@ -1,0 +1,166 @@
+import { Task, AppNotification } from '@/types';
+
+/* ============================================================
+ * Sample seed data – used for initial state when no localStorage
+ * ============================================================ */
+
+const now = Date.now();
+const DAY = 24 * 60 * 60 * 1000;
+
+export const sampleTasks: Task[] = [
+  {
+    id: 'seed-1',
+    title: 'Design new landing page',
+    description:
+      'Create a modern, responsive landing page design with glassmorphism elements and smooth animations.',
+    priority: 'high',
+    status: 'in-progress',
+    dueDate: new Date(now + 2 * DAY).toISOString(),
+    tags: ['Design', 'Frontend'],
+    createdAt: new Date(now - 5 * DAY).toISOString(),
+    updatedAt: new Date(now).toISOString(),
+    order: 0,
+  },
+  {
+    id: 'seed-2',
+    title: 'Implement user authentication',
+    description:
+      'Set up JWT-based authentication with refresh tokens, password reset flow, and OAuth providers.',
+    priority: 'critical',
+    status: 'todo',
+    dueDate: new Date(now + 1 * DAY).toISOString(),
+    tags: ['Backend', 'Feature'],
+    createdAt: new Date(now - 3 * DAY).toISOString(),
+    updatedAt: new Date(now).toISOString(),
+    order: 1,
+  },
+  {
+    id: 'seed-3',
+    title: 'Write API documentation',
+    description: 'Document all REST API endpoints with OpenAPI / Swagger specification.',
+    priority: 'medium',
+    status: 'todo',
+    dueDate: new Date(now + 7 * DAY).toISOString(),
+    tags: ['Documentation', 'Backend'],
+    createdAt: new Date(now - 7 * DAY).toISOString(),
+    updatedAt: new Date(now).toISOString(),
+    order: 2,
+  },
+  {
+    id: 'seed-4',
+    title: 'Fix responsive layout issues',
+    description: 'Address mobile viewport issues on the dashboard and task list views.',
+    priority: 'high',
+    status: 'completed',
+    dueDate: new Date(now - 1 * DAY).toISOString(),
+    tags: ['Bug', 'Frontend'],
+    createdAt: new Date(now - 10 * DAY).toISOString(),
+    updatedAt: new Date(now - 1 * DAY).toISOString(),
+    order: 3,
+  },
+  {
+    id: 'seed-5',
+    title: 'Set up CI/CD pipeline',
+    description: 'Configure GitHub Actions for automated testing, linting, and deployment.',
+    priority: 'medium',
+    status: 'completed',
+    dueDate: new Date(now - 3 * DAY).toISOString(),
+    tags: ['DevOps'],
+    createdAt: new Date(now - 14 * DAY).toISOString(),
+    updatedAt: new Date(now - 3 * DAY).toISOString(),
+    order: 4,
+  },
+  {
+    id: 'seed-6',
+    title: 'Performance audit & optimization',
+    description:
+      'Run Lighthouse audits and optimize bundle size, lazy loading, and caching strategies.',
+    priority: 'low',
+    status: 'todo',
+    dueDate: new Date(now + 14 * DAY).toISOString(),
+    tags: ['Frontend', 'Research'],
+    createdAt: new Date(now - 2 * DAY).toISOString(),
+    updatedAt: new Date(now).toISOString(),
+    order: 5,
+  },
+  {
+    id: 'seed-7',
+    title: 'Add unit tests for task service',
+    description:
+      'Write comprehensive unit tests covering CRUD operations, validation, and edge cases.',
+    priority: 'medium',
+    status: 'in-progress',
+    dueDate: new Date(now + 4 * DAY).toISOString(),
+    tags: ['Testing', 'Backend'],
+    createdAt: new Date(now - 4 * DAY).toISOString(),
+    updatedAt: new Date(now).toISOString(),
+    order: 6,
+  },
+  {
+    id: 'seed-8',
+    title: 'Review pull requests',
+    description: 'Review and provide feedback on pending pull requests from team members.',
+    priority: 'low',
+    status: 'completed',
+    dueDate: new Date(now - 2 * DAY).toISOString(),
+    tags: ['Research'],
+    createdAt: new Date(now - 6 * DAY).toISOString(),
+    updatedAt: new Date(now - 2 * DAY).toISOString(),
+    order: 7,
+  },
+  {
+    id: 'seed-9',
+    title: 'Database schema migration',
+    description: 'Migrate legacy database schema to the new normalized structure with proper indexes.',
+    priority: 'critical',
+    status: 'in-progress',
+    dueDate: new Date(now + 1 * DAY).toISOString(),
+    tags: ['Backend', 'Urgent'],
+    createdAt: new Date(now - 8 * DAY).toISOString(),
+    updatedAt: new Date(now).toISOString(),
+    order: 8,
+  },
+  {
+    id: 'seed-10',
+    title: 'Create onboarding flow',
+    description: 'Design and implement a step-by-step onboarding experience for new users.',
+    priority: 'medium',
+    status: 'todo',
+    dueDate: new Date(now + 10 * DAY).toISOString(),
+    tags: ['Design', 'Feature', 'Frontend'],
+    createdAt: new Date(now - 1 * DAY).toISOString(),
+    updatedAt: new Date(now).toISOString(),
+    order: 9,
+  },
+];
+
+export const sampleNotifications: AppNotification[] = [
+  {
+    id: 'n1',
+    message: 'Task "Design new landing page" is due tomorrow',
+    type: 'warning',
+    read: false,
+    createdAt: new Date(now).toISOString(),
+  },
+  {
+    id: 'n2',
+    message: 'You completed 5 tasks this week — great job!',
+    type: 'success',
+    read: false,
+    createdAt: new Date(now - 1 * DAY).toISOString(),
+  },
+  {
+    id: 'n3',
+    message: 'Task "Implement auth" has critical priority',
+    type: 'error',
+    read: true,
+    createdAt: new Date(now - 2 * DAY).toISOString(),
+  },
+  {
+    id: 'n4',
+    message: 'New team member Alex joined the workspace',
+    type: 'info',
+    read: true,
+    createdAt: new Date(now - 3 * DAY).toISOString(),
+  },
+];
